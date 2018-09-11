@@ -1,0 +1,41 @@
+name:                bluejay
+version:             0.0.0
+git:                 "git@git.localcooking.com:tooling/bluejay.git"
+license:             BSD3
+author:              "Athan Clark"
+maintainer:          "athan.clark@localcooking.com"
+copyright:           "Copyright (c) 2018 Local Cooking Inc."
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/bluejay#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- deepseq
+- hashable
+- nested-routes >= 9.0.0.1
+- text
+
+library:
+  source-dirs: src
+
+tests:
+  bluejay-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - bluejay
